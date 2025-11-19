@@ -1,19 +1,20 @@
-# Challenge `XYZ` writeup
+# Challenge `Guess a Big Number` writeup
 
 - Vulnerability: What type of vulnerability is being exploited
-  - _Eg, SQL Injection, XSS, Endpoint is vulnerable to brute-force attack, etc_
+  - Endpoint is vulnerable to a targetted attack
 - Where: Where is the vulnerability present
-  - _Eg, `/guess/number` endpoint_
+  - `/number/{id}` endpoint
 - Impact: What results of exploiting this vulnerability
-  - _Eg, allows to find the server's guess by enumeration_
+  - Allows to find the server's guess by binary search enumeration
 - NOTE: Any other observation
 
 ## Steps to reproduce
 
-1. Do this
-2. Do that
-3. ...
-N. Now something bad happened
+1. Access the server to establish a session and receive initial cookie
+2. Access `/number/{id}` endpoints with different values
+3. Parse the response for "Higher!" or "Lower!" hints
+4. Use binary search algorithm to narrow down the range based on hints
+5. Continue until the flag's prefix `SSof` appears in response 
 
-[(POC)](`name_of_the_challenge_poc.py`)
+[(POC)](`guess_big_number_poc.py`)
 
