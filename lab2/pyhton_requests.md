@@ -1,19 +1,21 @@
-# Challenge `XYZ` writeup
+# Challenge `Python requests` writeup
 
 - Vulnerability: What type of vulnerability is being exploited
-  - _Eg, SQL Injection, XSS, Endpoint is vulnerable to brute-force attack, etc_
+  - Endpoint is vulnerable to a targetted attack
 - Where: Where is the vulnerability present
-  - _Eg, `/guess/number` endpoint_
+  - `/more` endpoint
 - Impact: What results of exploiting this vulnerability
-  - _Eg, allows to find the server's guess by enumeration_
+  - Allows to find the solution by simply repeatedly querying the `/more` endpoint until the condition `current_value==target` is met.
 - NOTE: Any other observation
 
 ## Steps to reproduce
 
-1. Do this
-2. Do that
-3. ...
+1. Start the game by sending a `GET` request to the server and save the cookies.
+2. Loop to get more numbers by sending a `GET` request to the `more`endpoint
+3. At each iteration retrieve the `current_value` and `target`and then check if they are equal.
+4. If `current_value == target`, send a `GET`request to the `finish` endpoint, get the flag and end the loop. Otherwise, start another iteration.
+
 N. Now something bad happened
 
-[(POC)](`name_of_the_challenge_poc.py`)
+[(POC)](python_requests_poc.py)
 

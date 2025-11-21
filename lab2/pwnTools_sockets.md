@@ -1,19 +1,21 @@
-# Challenge `XYZ` writeup
+# Challenge `PwnTools Sockets` writeup
 
 - Vulnerability: What type of vulnerability is being exploited
   - _Eg, SQL Injection, XSS, Endpoint is vulnerable to brute-force attack, etc_
 - Where: Where is the vulnerability present
-  - _Eg, `/guess/number` endpoint_
+  - The service running on `mustard.stt.rnl.tecnico.ulisboa.pt:25055`, and the commands `MORE` and `FINISH`. 
 - Impact: What results of exploiting this vulnerability
-  - _Eg, allows to find the server's guess by enumeration_
+  - Allows to find the flag by repeatedly sending the `MORE` command until it reaches the target. 
 - NOTE: Any other observation
 
 ## Steps to reproduce
 
-1. Do this
-2. Do that
-3. ...
-N. Now something bad happened
+1. Connect to the remote server using the `remote` command.
+2. Read the server's initial message using `s.recvuntil()` and `s.recvline()`. Extract `target` and `current_value`.
+3. Loop to get more numbers by sending `MORE` command.
+4. At each iteration retrieve the `current_value` and `target`and then check if they are equal.
+5. If `current_value == target`, send a `FINISH`command to the server, get the flag and end the loop. 
+6. Close the server connection.
 
-[(POC)](`name_of_the_challenge_poc.py`)
+[(POC)](pwnTools_sockets_poc.py)
 

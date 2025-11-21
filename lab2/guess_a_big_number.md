@@ -13,8 +13,7 @@
 1. Access the server to establish a session and receive initial cookie
 2. Access `/number/{id}` endpoints with different values
 3. Parse the response for "Higher!" or "Lower!" hints
-4. Use binary search algorithm to narrow down the range based on hints
+4. Use a binary search algorithm to narrow down the range based on hints
 5. Continue until the flag's prefix `SSof` appears in response 
 
-[(POC)](`guess_big_number_poc.py`)
-
+[(POC)](guess_big_number_poc.py)
