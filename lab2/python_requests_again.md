@@ -1,7 +1,7 @@
 # Challenge `Python requests Again` writeup
 
 - Vulnerability: What type of vulnerability is being exploited
-  - Cookie exploitation
+  - Cookie exploitation.
 - Where: Where is the vulnerability present
   - Interaction between the `/hello`, `/more`, and `/finish` endpoints, specifically how the session cookie is used to track the `current_value`.
 - Impact: What results of exploiting this vulnerability

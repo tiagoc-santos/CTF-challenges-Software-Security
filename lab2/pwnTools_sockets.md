@@ -1,7 +1,7 @@
 # Challenge `PwnTools Sockets` writeup
 
 - Vulnerability: What type of vulnerability is being exploited
-  - _Eg, SQL Injection, XSS, Endpoint is vulnerable to brute-force attack, etc_
+  - The server is vulnerable to protocol abuse.
 - Where: Where is the vulnerability present
   - The service running on `mustard.stt.rnl.tecnico.ulisboa.pt:25055`, and the commands `MORE` and `FINISH`. 
 - Impact: What results of exploiting this vulnerability

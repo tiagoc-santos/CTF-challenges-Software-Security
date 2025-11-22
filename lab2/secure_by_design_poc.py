@@ -7,8 +7,6 @@ PORT = 25056
 url = f"{SERVER}:{PORT}"
 
 s = requests.Session()
-
-# Get page -> receives cookie
 r = s.get(url)
 
 # Set admin cookie
