@@ -10,7 +10,7 @@ s = requests.Session()
 
 s.get(link)
 
-data = {'username': 'admin', 'password': 'password'}
+data = {'username': 'admin', 'password': 'lol'}
 
 def race():
     while True:
